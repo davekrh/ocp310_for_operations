@@ -3,7 +3,7 @@
 With DNS verified, prerequisite packages installed, and the inventory file in place, we are ready to perform the OpenShift installation. The installation is contained within two steps. The first step completes prerequisites prior to installation, and the second step performs the actual installation. The first step could take as little as five minutes, while the install can take thirty or more minutes.
 
 Become root on the master (if needed) and run the following:
-```javascript
+```
 [student@workstation ~]$ sudo ssh master
 Last login: Thu Aug  2 10:39:23 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
@@ -19,7 +19,7 @@ master.example.com
     /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
 ```
 You should see the following after about thirty minutes:
-```javascript
+```
 ...
 
 PLAY RECAP ***********************************************************************************************************************************************************************************************************************************************************************

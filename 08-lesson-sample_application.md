@@ -5,7 +5,7 @@ We created a user in the previous lesson, cleverly named "user". Now we will dep
 While we can create applications from the command line, we will show how to use the web interface. Because of the environment we’re using, you will open a graphical console on the cloud provider which includes a web browser that we’ll be using for this lab. You will use the same student credentials as you did when using ssh to reach your workstation.
 
 After you’ve logged into the graphical console of the workstation, navigate to “Applications”, then “Firefox”. Once in Firefox, enter the url: 
-```javascript
+```
 https://master.example.com:8443
 ```
 Log in with the “user” account you created earlier and perform the following steps:
@@ -22,7 +22,7 @@ When you click the route, you should see a map.
 
 We will now create a container from existing source code, also called “S2I” or “source to image”. This container will be the backend for our map. 
 Click “Add to Project” in the upper right corner, then “Browse Catalog”. Find and select “Python”. Ensure the “Application Name” is “nationalparks-katacoda” and the “Git Repository” is:
-```javascript
+```
 https://github.com/openshift-roadshow/nationalparks-katacoda
 ```
 Continue to the overview where you can watch the build progress.

@@ -3,7 +3,7 @@
 OpenShift requires storage to be set aside for container images. This storage will house the container images used in the class. It’s important to realize that images are stored here but not the application data itself.
 
 Each of your OpenShift machines has been an additional 10G block device to host container images. Should you wish to verify the locally-attached storage of your machines, you can run lsblk on individual hosts or via ansible. The following example was run from master:
-```javascript
+```
 [root@master ~]# lsblk
 NAME                   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 fd0                      2:0    1    4K  0 disk
@@ -19,11 +19,11 @@ vdb                    252:16   0   10G  0 disk
 As shown by lsblk, /dev/vdb is 10G. We will use /dev/vdb as our container image block device. A good practice is to ensure there isn’t information left on block devices. wipefs can be used to remove any leftover file system, raid, or other metadata from block devices.
 
 Run the following from your workstation host:
-```javascript
+```
 [student@workstation ~]$ sudo ansible all -m shell -a 'wipefs --all /dev/vdb'
 ```
 After the storage is deemed suitable, run the following from your workstation:
-```javascript
+```
 [student@workstation ~]$ for i in master node1 node2; do echo $i; sudo ssh $i "cat << 'EOF' > /etc/sysconfig/docker-storage-setup
 DEVS=/dev/vdb
 VG=docker-vg
@@ -31,7 +31,7 @@ EOF
 "; done
 ```
 We will now run docker-storage-setup, which controls how container image data is stored (which we specified above), and we will ensure the docker daemon is running and enabled:
-```javascript
+```
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'docker-storage-setup'
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable docker && service docker start'
 ```

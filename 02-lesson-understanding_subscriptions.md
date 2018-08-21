@@ -7,19 +7,19 @@ Because Red Hat software is made available via subscriptions, a common productio
 We have pre-arranged the subscriptions used in this class, so we will not be registering our machines. We are using yum-config-manager today however production environments would leverage subscription-manager to locally administer subscriptions and software repositories. yum-config-manager will approximate the process of adding the correct subscriptions to an OpenShift deployment.
 
 Our first step is to ensure we have the proper software repositories enabled. We start by disabling any existing repositories and adding only the repositories we need. On your workstation machine, execute the following:
-```javascript
+```
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum-config-manager  --disable \* '
 ```
 Enable the needed repos for all OpenShift hosts:
-```javascript
+```
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a "yum-config-manager --enable rhel-7-server-rpms rhel-7-server-extras-rpms rhel-7-server-ose-3.10-rpms rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms"
 ```
 You can confirm the correct repositories have been enabled with the following:
-```javascript
+```
 [student@workstation ~]$ sudo ansible -f3 all -m shell -a 'yum repolist'
 ```
 You should see output similar to the following:
-```javascript
+```
 ...
 master | SUCCESS | rc=0 >>
 Loaded plugins: langpacks, product-id, search-disabled-repos, subscription-

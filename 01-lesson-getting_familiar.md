@@ -7,7 +7,7 @@ Your workstation virtual machine has a unique, publicly-accessible IP address an
 Ensure you can log into the workstation. You may become root via “sudo -i”. 
 
 Log into the workstation and build an ansible hosts file suitable for managing your OpenShift environment:
-```javascript
+```
 [student@workstation ~]$ sudo vim /etc/ansible/hosts
 [ocp]
 master
@@ -20,11 +20,11 @@ This file allows you to manage your OpenShift environment with ansible. Ansible 
 Ansible requires that hosts be reachable without intervention. For this training, we've created keys that allow password-less logins via root. See the appendix for additional information about creating and distributing ssh keys.
 
 Try the following commands to ensure your OpenShift virtual machines are reachable via ansible:
-```javascript
+```
 [student@workstation ~]$ sudo ansible all -m ping
 ```
 If everything is configured properly, you should see something like the following:
-```javascript
+```
 
 node1 | SUCCESS => {
     "changed": false,
@@ -40,7 +40,7 @@ master | SUCCESS => {
 }
 ```
 You may also execute arbitrary shell commands via ansible:
-```javascript
+```
 [student@workstation ~]$ sudo ansible all -m shell -a 'uptime'
 node2 | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.07, 0.08, 0.08

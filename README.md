@@ -1,7 +1,7 @@
 # ocp310_for_operations
-This is a Red Hat OpenShift Container Platform workshop designed to provide participants with an infrastructure-centric view of installing and using a container platform. 
+This is a Red Hat OpenShift Container Platform workshop targeted at pre-sales and technical partners. 
 
-This training is designed to give you, gentle reader, an infrastructure-centric experience installing Red Hat OpenShift Container Platform. The target audience for this training is technical. Those with Red Hat Enterprise Linux and open source familiarity will feel right at home.
+This training is designed to give you, gentle reader, an infrastructure-centric experience installing Red Hat OpenShift Container Platform. Those with Red Hat Enterprise Linux and open source familiarity will feel right at home.
 
 The OpenShift environment will consist of a master and two nodes, with other virtual machines providing services required for the training. The environment will be created on hosted infrastructure conducive to our training purposes. Professional deployments use virtualization platforms, bare metal, or public clouds.
 

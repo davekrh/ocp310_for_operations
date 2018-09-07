@@ -10,7 +10,7 @@ https://master.example.com:8443
 ```
 Log in with the “user” account you created earlier and perform the following steps:
 
-Click the blue “Create Project” button and name the project “myproject”. The other fields are optional. You should now see “myproject” in the upper left corner. If not, click “myproject”. 
+Click the blue “Create Project” button and name the project “myproject”. The other fields are optional. You should now see “myproject” in the upper left corner. If not, click the blue “myproject” link.
 
 Next click “Deploy Image”. This dialog allows us to deploy existing containers. Select the “Image Name” radio button and input: “openshiftroadshow/parksmap-katacoda:1.0.0”. Press return, then the blue “Deploy” button on the bottom right. 
 

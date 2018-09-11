@@ -13,8 +13,8 @@ Your instructor will grant you a hosted environment with virtual hardware. The e
 
 **Lab Environment:**
 
-Workstation: This machine has a dynamically assigned public IP address that you will SSH to, as well as a virtual desktop environment with a web browser. 
-Master: This machine will host the OpenShift master.
-Node1: This machine will host one OpenShift node.
-Node2: This machine will host one OpenShift node.
-Core: This machine will host DNS, software repositories, and other services needed for the training environment. Modifying this machine is unnecessary.
+* Workstation: This machine has a dynamically assigned public IP address that you will SSH to, as well as a virtual desktop environment with a web browser. 
+* Master (master.example.com): This machine will host the OpenShift master.
+* Node1 (node1.example.com): This machine will host one OpenShift node.
+* Node2 (node2.example.com): This machine will host one OpenShift node.
+* Core (core.example.com): This machine will host DNS, software repositories, and other services needed for the training environment. Modifying this machine is unnecessary.

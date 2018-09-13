@@ -52,10 +52,13 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 ```
 We will create an admin user and password that will allow us to log in and see additional information:
 ```
-htpasswd -b /etc/origin/master/htpasswd admin ocpadmin
-oc adm policy add-cluster-role-to-user cluster-admin admin
+[root@master ~]# htpasswd -b /etc/origin/master/htpasswd admin ocpadmin
+Adding password for user admin
+
+[root@master ~]# oc adm policy add-cluster-role-to-user cluster-admin admin
+cluster role "cluster-admin" added: "admin"
 ```
-We now have an admin user and password created. Log in again:
+You have now created a user named `admin` with the password of `ocpuser`. Log in again:
 ```
 [root@master ~]# oc login https://master.example.com:8443
 Authentication required for https://master.example.com:8443 (openshift)
@@ -86,8 +89,10 @@ You can also try a few different commands once logged in:
 [root@master ~]# oc whoami
 admin
 You have new mail in /var/spool/mail/root
+
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
+
 [root@master ~]# oc get projects
 NAME                                DISPLAY NAME   STATUS
 default                                            Active
@@ -113,6 +118,7 @@ You now will have a user named `user` with the password of `ocpuser`. You can lo
 ```
 [root@master ~]# oc whoami
 admin
+
 [root@master ~]# oc login -u user
 Authentication required for https://master.example.com:8443 (openshift)
 Username: user
@@ -125,6 +131,7 @@ You don't have any projects. You can try to create a new project, by running
 
 [root@master ~]# oc whoami
 user
+
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
 ```

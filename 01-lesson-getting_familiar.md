@@ -53,4 +53,4 @@ node1 | SUCCESS | rc=0 >>
 master | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.55, 0.62, 0.77
 ```
-Please ensure ansible is working properly and that your OpenShift virtual machines are reachable before proceeding.
+Review your results to ensure it matches the sample output above, confirming that ansible is working properly and your OpenShift virtual machines are reachable before proceeding.

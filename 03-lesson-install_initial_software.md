@@ -10,7 +10,7 @@ Run the following from your workstation to install the initial packages:
   iptables-services bridge-utils \
   bash-completion kexec-tools \
   sos psacct openshift-ansible \
-  docker vim'
+  docker vim-enhanced screen'
 ```
 The initial package installation shouldn’t take too long to complete. The flag we used above, "-f 3", ensures that the installation process is run in parallel on our three machines. In contrast, a typical for loop on the command line will execute the steps one host at a time, needlessly extending the amount of time for the task.
 

@@ -12,11 +12,11 @@ https://master.example.com:8443
 ```
 Log in with the `user` account you created earlier and perform the following steps:
 
-Click the blue “Create Project” button and name the project *myproject*. The other fields are optional. After creating the project, click the blue “myproject” link.
+Click the blue “Create Project” button and name the project *myproject*. The other fields are optional. After creating the project, click the blue *myproject* link.
 
 Next click “Deploy Image”. This dialog allows us to deploy existing containers. Select the “Image Name” radio button and input: *openshiftroadshow/parksmap-katacoda:1.0.0*. Press return, then the blue “Deploy” button on the bottom right. 
 
-Next click “Continue to Project Overview”. You’ll see an overview of “myproject” and can interact with the number of containers running, among many other controls. From this view, you can increase the number of running containers, view logs in real time, and take many other actions.
+Next click “Continue to Project Overview”. You’ll see an overview of *myproject* and can interact with the number of containers running, among many other controls. From this view, you can increase the number of running containers, view logs in real time, and take many other actions.
 
 In order to interact with your application outside of the OpenShift cluster itself, you need to create a route. In the overview, ensure the arrow to the left of “parksmap-katacoda” is expanded. Click “create route” and accept the defaults. You’ll see a URL that you can click within the overview.
 

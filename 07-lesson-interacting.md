@@ -109,7 +109,7 @@ Next we will create a user with limited authority. Perform the following on mast
 [root@master ~]# htpasswd -b /etc/origin/master/htpasswd user ocpuser
 Adding password for user user
 ```
-You now will have a user named “user” with the password of “ocpuser”. You can log in via the CLI by doing the following:
+You now will have a user named `user` with the password of `ocpuser`. You can log in via the CLI by doing the following:
 ```
 [root@master ~]# oc whoami
 admin
@@ -128,4 +128,4 @@ user
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
 ```
-You can change users on the command line using “oc login”. It’s a good idea to determine which user is active before interacting with OpenShift. For the remaining labs, we will be using the “user” OpenShift account.
+You can change users on the command line using `oc login`. It’s a good idea to determine which user is active with `oc whoami` before interacting with OpenShift. For the remaining labs, we will be using the `user` OpenShift account.

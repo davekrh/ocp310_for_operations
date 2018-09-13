@@ -1,12 +1,14 @@
 # Lesson One: Getting Familiar with the Environment
 
-These steps are to be performed after your instructor has provisioned an environment for you. Using an ssh client from your laptop, log into the workstation machine. You will log in using the “student” user name, and your instructor will provide the password. 
+These steps are to be performed after your instructor has provisioned an environment for you. Using an ssh client from your laptop, you will log into the workstation machine. You will log in using the “student” user name, and your instructor will provide the password. 
 
 Your workstation virtual machine has a unique, publicly-accessible IP address and DNS name. Your OpenShift machines will communicate via private IP addresses. Because these addresses cannot be routed to your laptop, the workstation acts as a jump host and can access the entire hosted environment.
 
-Ensure you can log into the workstation. You may become root via “sudo -i”. 
+Once you've logged into the portal using the student credentials provided by your instructor, proceed to the guestbook and register. This registration process will give you a student number and will provide the public IP address of the workstation. In a later lab, this page will also provide a graphical environment.
 
-Log into the workstation and build an ansible hosts file suitable for managing your OpenShift environment:
+You can download an ssh client for Windows at putty.org if need be. Once on the workstation, you may become root via “sudo -i”. 
+
+ssh to the workstation and build an ansible hosts file suitable for managing your OpenShift environment:
 ```
 [student@workstation ~]$ sudo vim /etc/ansible/hosts
 [ocp]
@@ -52,4 +54,3 @@ master | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.55, 0.62, 0.77
 ```
 Please ensure ansible is working properly and that your OpenShift virtual machines are reachable before proceeding.
-

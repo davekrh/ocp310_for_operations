@@ -24,7 +24,7 @@ When you click the route, you should see a map.
 
 We will now create a container from existing source code, also called “S2I” or “source to image”. This container will be the backend for our map.
 
-Click “Add to Project” in the upper right corner, then “Browse Catalog”. Find and select “Python”. Ensure the “Application Name” is *nationalparks-katacoda* and the “Git Repository” is:
+Click back to the Console tab. Click “Add to Project” in the upper right corner, then “Browse Catalog”. Find and select “Python”. Ensure the “Application Name” is *nationalparks-katacoda* and the “Git Repository” is:
 ```
 https://github.com/openshift-roadshow/nationalparks-katacoda
 ```

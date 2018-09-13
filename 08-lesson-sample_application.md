@@ -30,7 +30,7 @@ https://github.com/openshift-roadshow/nationalparks-katacoda
 ```
 Click the blue "Create" button in bottom corner.
 
-Continue to the overview where you can watch the build progress.
+Then click on "Continue to the overview" where you can watch the build progress.
 
 Once the build completes, you can click on the first route you created earlier to see your map populated.
 

@@ -70,6 +70,7 @@ svc/parksmap-katacoda - 172.30.238.97:8080
 
 
 2 infos identified, use 'oc status -v' to see details.
+
 [root@master ~]# oc get all
 NAME                            READY     STATUS    RESTARTS   AGE
 pod/parksmap-katacoda-1-9llrx   1/1       Running   0          46s

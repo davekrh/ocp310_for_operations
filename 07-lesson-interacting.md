@@ -46,7 +46,7 @@ Password:
 Login failed (401 Unauthorized)
 Verify you have provided correct credentials.
 ```
-Referring to our OpenShift inventory file, we had specified htpasswd as a valid authentication method in our inventory file:
+Referring to our OpenShift inventory file, we had specified `htpasswd` as a valid authentication method in our inventory file:
 ```javascript
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
 ```

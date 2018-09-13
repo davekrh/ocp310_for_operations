@@ -4,7 +4,7 @@ We created a user in the previous lesson, cleverly named `user`. Now we will dep
 
 While we can create applications from the command line, we will show how to use the web interface. Because of the environment we’re using, you will open a graphical console on the cloud provider which includes a web browser that we’ll be using for this lab. You will use the same student credentials as you did when using ssh to reach your workstation.
 
-The page that details your student information has a link to "Control Center". This link gives you additional access to the training environment. Find the box for "WORKSTATION" and click "CONSOLE". You will be taken to a graphical console of the workstation. Log in with your student password provided by your instructor. 
+The page that details your student information has a link to "Control Center". (Just below your Student number.) This link gives you additional access to the training environment. Find the box for "WORKSTATION" and click "CONSOLE". You will be taken to a graphical console of the workstation. Log in with your student password provided by your instructor. 
 
 After you’ve logged into the graphical console of the workstation, navigate to “Applications”, then “Firefox”. Once in Firefox, enter the url: 
 ```

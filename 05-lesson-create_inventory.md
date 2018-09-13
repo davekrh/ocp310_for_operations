@@ -29,6 +29,10 @@ Last login: Thu Aug  2 10:39:17 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
 [root@master ~]#
 ```
+You should have a default, completely commented /etc/ansible/hosts file on master. Blanking this file is a good practice before creating your OpenShift inventory. Run the folling on master to blank the default inventory file:
+```
+[root@master ~]# > /etc/ansible/hosts
+```
 We will now build the inventory file used by OpenShift. Open a text editor and input the following in /etc/ansible/hosts:
 ```
 # 20180821 -- begin OpenShift inventory file

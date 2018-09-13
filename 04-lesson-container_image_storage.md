@@ -2,7 +2,7 @@
 
 OpenShift requires storage to be set aside for container images. This storage will house the container images used in the class. It’s important to realize that images are stored here but not the application data itself.
 
-Each of your OpenShift machines has been provisioned an additional 10G block device to host container images. Should you wish to verify the locally-attached storage of your machines, you can run lsblk on individual hosts or via ansible. The following example was run from master:
+Each of your OpenShift machines has been provisioned with an additional 10G block device to host container images. Should you wish to verify the locally-attached storage of your machines, you can run lsblk on individual hosts or via ansible. The following example was run from master:
 ```
 [root@master ~]# lsblk
 NAME                   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT

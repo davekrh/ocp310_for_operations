@@ -16,7 +16,7 @@ vda                    252:0    0   10G  0 disk
 vdb                    252:16   0   10G  0 disk
 [root@master ~]#
 ```
-As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container image block device. A good practice is to ensure there isn’t information left on block devices. The `wipefs` tool can be used to remove any leftover file system, raid, or other metadata from block devices.
+As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container image block device. A good practice is to ensure there isn’t any previous information left on block devices. The `wipefs` tool can be used to remove any leftover file system, raid, or other metadata from block devices.
 
 Run the following from your workstation host to prepare the block devices :
 ```

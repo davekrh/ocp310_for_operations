@@ -4,7 +4,7 @@ OpenShift uses a centralized Ansible inventory file to describe, install, and mo
 
 OpenShift requires access to DNS. Crucially, OpenShift requires the ability to utilize DNS wildcards. This is required for arbitrary applications to be created and reachable via DNS names. 
 
-Our environment has pre-configured a wildcard DNS domain. On any machine, you can ping arbitrary DNS names on “cloud.example.com” to refer back to OpenShift’s master:
+Our environment has pre-configured a wildcard DNS domain. On any machine, you can ping arbitrary DNS names on `cloud.example.com` to refer back to OpenShift’s master:
 ```
 [student@workstation ~]$ ping jobu.cloud.example.com
 PING jobu.cloud.example.com (10.0.0.11) 56(84) bytes of data.
@@ -18,9 +18,9 @@ PING zappa.cloud.example.com (10.0.0.11) 56(84) bytes of data.
 64 bytes from node1.example.com (10.0.0.11): icmp_seq=2 ttl=64 time=0.516 ms
 ^C
 ```
-It is important to have a DNS wildcard domain implemented well in advance of OpenShift’s installation. This domain is reflected as “openshift_master_default_subdomain” in the inventory file.
+It is important to have a DNS wildcard domain implemented well in advance of OpenShift’s installation. This domain is reflected as `openshift_master_default_subdomain` in the inventory file.
 
-OpenShift’s installation documentation provides examples of the inventory file. You can also find examples under /usr/share/doc/openshift-ansible-docs-$version/docs/example-inventories/
+OpenShift’s installation documentation provides examples of the inventory file. You can also find examples under `/usr/share/doc/openshift-ansible-docs-$version/docs/example-inventories/`.
 
 The inventory file resides on the master host. Log onto the master host:
 ```
@@ -29,11 +29,11 @@ Last login: Thu Aug  2 10:39:17 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
 [root@master ~]#
 ```
-You should have a default, completely commented /etc/ansible/hosts file on master. Blanking this file is a good practice before creating your OpenShift inventory. Run the folling on master to blank the default inventory file:
+You should have a default, completely commented `/etc/ansible/hosts` file on master. Blanking this file is a good practice before creating your OpenShift inventory. Run the folling on master to blank the default inventory file:
 ```
 [root@master ~]# > /etc/ansible/hosts
 ```
-We will now build the inventory file used by OpenShift. Open a text editor and input the following in /etc/ansible/hosts:
+We will now build the inventory file used by OpenShift. Open a text editor and input the following in `/etc/ansible/hosts`:
 ```
 # 20180821 -- begin OpenShift inventory file
 # Create an OSEv3 group that contains the masters, nodes, and etcd groups
@@ -77,6 +77,10 @@ node2.example.com openshift_node_group_name='node-config-compute'
 # end OpenShift inventory
 ```
 
-Please examine /etc/ansible/hosts to ensure everything appears correct. At this point, we are ready to validate our setup and install OpenShift.
+Please carefully examine `/etc/ansible/hosts` to ensure everything appears correct.
+
+TIP: In particular, depending on the tools and editor used to cut-and-paste, be sure that only the desired comment lines start with `#` and not the entire file! 
+
+At this point, we are ready to validate our setup and install OpenShift.
 
 [Lesson Six: Installing the OpenShift Cluster](06-lesson-install_cluster.md)

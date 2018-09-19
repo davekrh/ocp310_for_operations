@@ -36,3 +36,4 @@ We will now run docker-storage-setup, which controls how container image data is
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable docker && service docker start'
 ```
 Please ensure there are no errors before continuing.
+[Lesson Five: Creating the OpenShift Ansible Inventory](05-lesson-create_inventory.md)

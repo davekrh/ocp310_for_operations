@@ -21,4 +21,4 @@ Your instructor will grant you a hosted environment with virtual hardware. The e
 
 **Begin Lab**
 
-[Lesson One](01-lesson-getting_familiar.md)
+[Lesson One: Getting Familiar with the Environment](01-lesson-getting_familiar.md)

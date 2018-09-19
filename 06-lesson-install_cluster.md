@@ -93,3 +93,5 @@ You have new mail in /var/spool/mail/root
 [root@master ~]#
 ```
 Errors occurring during the installation will appear in bright red. Provided the installation completed successfully, we may now proceed to test and interact with the environment.
+
+[Lesson Seven: Interacting With Your Installation](07-lesson-interacting.md)

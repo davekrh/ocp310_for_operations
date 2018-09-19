@@ -54,3 +54,5 @@ master | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.55, 0.62, 0.77
 ```
 Review your results to ensure it matches the sample output above, confirming that ansible is working properly and your OpenShift virtual machines are reachable before proceeding.
+
+[Lesson Two: Understanding Subscriptions and Software Repositories](02-lesson-understanding_subscriptions.md)

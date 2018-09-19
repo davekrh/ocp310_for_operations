@@ -146,3 +146,4 @@ After the build is finished, you can input the route created earlier into your b
 NAME                HOST/PORT                                       PATH      SERVICES            PORT       TERMINATION   WILDCARD
 parksmap-katacoda   parksmap-katacoda-myproject.cloud.example.com             parksmap-katacoda   8080-tcp                 None
 ```
+[Final Thoughts](10-lesson-final_thoughts.md)

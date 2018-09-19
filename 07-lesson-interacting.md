@@ -129,3 +129,5 @@ user
 https://master.example.com:8443
 ```
 You can change users on the command line using “oc login”. It’s a good idea to determine which user is active before interacting with OpenShift. For the remaining labs, we will be using the “user” OpenShift account.
+
+[Lesson Eight: Creating a Sample Application via the Web UI](08-lesson-sample_application.md)

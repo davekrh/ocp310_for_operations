@@ -19,3 +19,5 @@ OpenShift also requires that NetworkManager be enabled on the cluster. We can en
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a "systemctl enable NetworkManager"
 ```
 At this point, you should have the initial packages needed to begin the OpenShift installation in place.
+
+[Lesson Four: Container Image Storage](04-lesson-container_image_storage.md)

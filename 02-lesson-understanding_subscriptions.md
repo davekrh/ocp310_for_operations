@@ -39,3 +39,5 @@ repolist: 5,953
 ...
 ```
 In a production environment, it is important to understand how to manage subscriptions, both to receive support and to ensure software remains current and secure.
+
+[Lesson Three: Install the Initial Software Packages](03-lesson-install_initial_software.md)

@@ -78,3 +78,5 @@ node2.example.com openshift_node_group_name='node-config-compute'
 ```
 
 Please examine /etc/ansible/hosts to ensure everything appears correct. At this point, we are ready to validate our setup and install OpenShift.
+
+[Lesson Six: Installing the OpenShift Cluster](06-lesson-install_cluster.md)

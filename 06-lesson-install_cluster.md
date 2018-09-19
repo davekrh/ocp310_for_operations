@@ -50,8 +50,10 @@ Onward to installation. Become root on the master (if needed) and run the follow
 [student@workstation ~]$ sudo ssh master
 Last login: Thu Aug  2 10:39:23 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
+
 [root@master ~]# id
 uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
 [root@master ~]# hostname
 master.example.com
 

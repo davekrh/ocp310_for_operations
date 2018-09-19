@@ -46,16 +46,19 @@ Password:
 Login failed (401 Unauthorized)
 Verify you have provided correct credentials.
 ```
-Referring to our OpenShift inventory file, we had specified htpasswd as a valid authentication method in our inventory file:
+Referring to our OpenShift inventory file, we had specified `htpasswd` as a valid authentication method in our inventory file:
 ```javascript
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
 ```
 We will create an admin user and password that will allow us to log in and see additional information:
 ```
-htpasswd -b /etc/origin/master/htpasswd admin ocpadmin
-oc adm policy add-cluster-role-to-user cluster-admin admin
+[root@master ~]# htpasswd -b /etc/origin/master/htpasswd admin ocpadmin
+Adding password for user admin
+
+[root@master ~]# oc adm policy add-cluster-role-to-user cluster-admin admin
+cluster role "cluster-admin" added: "admin"
 ```
-We now have an admin user and password created. Log in again:
+You have now created a user named `admin` with the password of `ocpuser`. Log in again:
 ```
 [root@master ~]# oc login https://master.example.com:8443
 Authentication required for https://master.example.com:8443 (openshift)
@@ -86,8 +89,10 @@ You can also try a few different commands once logged in:
 [root@master ~]# oc whoami
 admin
 You have new mail in /var/spool/mail/root
+
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
+
 [root@master ~]# oc get projects
 NAME                                DISPLAY NAME   STATUS
 default                                            Active
@@ -109,10 +114,11 @@ Next we will create a user with limited authority. Perform the following on mast
 [root@master ~]# htpasswd -b /etc/origin/master/htpasswd user ocpuser
 Adding password for user user
 ```
-You now will have a user named “user” with the password of “ocpuser”. You can log in via the CLI by doing the following:
+You now will have a user named `user` with the password of `ocpuser`. You can log in via the CLI by doing the following:
 ```
 [root@master ~]# oc whoami
 admin
+
 [root@master ~]# oc login -u user
 Authentication required for https://master.example.com:8443 (openshift)
 Username: user
@@ -125,9 +131,10 @@ You don't have any projects. You can try to create a new project, by running
 
 [root@master ~]# oc whoami
 user
+
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
 ```
-You can change users on the command line using “oc login”. It’s a good idea to determine which user is active before interacting with OpenShift. For the remaining labs, we will be using the “user” OpenShift account.
+You can change users on the command line using `oc login`. It’s a good idea to determine which user is active with `oc whoami` before interacting with OpenShift. For the remaining labs, we will be using the `user` OpenShift account.
 
 [Lesson Eight: Creating a Sample Application via the Web UI](08-lesson-sample_application.md)

@@ -8,4 +8,13 @@ Our lab has already populated the hosts with passwordless ssh keys. These keys c
 [student@workstation ~]$ for i in master node1 node2; do ssh-copy-id root@$i; done
 ```
 
+**Contributors**
+Mark Seida
+Christoph Doerbeck
+Gareth Jenkins
+Gordon Keegan
+Justin Pittman
+Matthew Ward
+
+Many others. 
 

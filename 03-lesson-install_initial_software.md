@@ -4,7 +4,13 @@ With the proper software repositories enabled, you can now install the initial p
 
 Run the following from your workstation to install the initial packages:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum install -y wget git net-tools bind-utils yum-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct openshift-ansible docker vim'
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum install -y \
+  wget git net-tools \
+  bind-utils yum-utils \
+  iptables-services bridge-utils \
+  bash-completion kexec-tools \
+  sos psacct openshift-ansible \
+  docker vim'
 ```
 The initial package installation shouldn’t take too long to complete. The flag we used above, "-f 3", ensures that the installation process is run in parallel on our three machines. In contrast, a typical for loop on the command line will execute the steps one host at a time, needlessly extending the amount of time for the task.
 
@@ -13,3 +19,5 @@ OpenShift also requires that NetworkManager be enabled on the cluster. We can en
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a "systemctl enable NetworkManager"
 ```
 At this point, you should have the initial packages needed to begin the OpenShift installation in place.
+
+[Lesson Four: Container Image Storage](04-lesson-container_image_storage.md)

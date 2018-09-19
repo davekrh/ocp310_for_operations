@@ -12,7 +12,11 @@ Our first step is to ensure we have the proper software repositories enabled. We
 ```
 Enable the needed repos for all OpenShift hosts:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a "yum-config-manager --enable rhel-7-server-rpms rhel-7-server-extras-rpms rhel-7-server-ose-3.10-rpms rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms"
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a "yum-config-manager --enable \ 
+    rhel-7-server-rpms \
+    rhel-7-server-extras-rpms \
+    rhel-7-server-ose-3.10-rpms \
+    rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms"
 ```
 You can confirm the correct repositories have been enabled with the following:
 ```
@@ -35,3 +39,5 @@ repolist: 5,953
 ...
 ```
 In a production environment, it is important to understand how to manage subscriptions, both to receive support and to ensure software remains current and secure.
+
+[Lesson Three: Install the Initial Software Packages](03-lesson-install_initial_software.md)

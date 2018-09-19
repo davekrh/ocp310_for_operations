@@ -77,8 +77,10 @@ node2.example.com openshift_node_group_name='node-config-compute'
 # end OpenShift inventory
 ```
 
-Please examine `/etc/ansible/hosts` to ensure everything appears correct.
+Please carefully examine `/etc/ansible/hosts` to ensure everything appears correct.
 
-TIP: In particular, depending on the tools and editor used to cut-and-paste, be sure that only the desired comment lines start with `#` and not the entire file!
+TIP: In particular, depending on the tools and editor used to cut-and-paste, be sure that only the desired comment lines start with `#` and not the entire file! 
 
 At this point, we are ready to validate our setup and install OpenShift.
+
+[Lesson Six: Installing the OpenShift Cluster](06-lesson-install_cluster.md)

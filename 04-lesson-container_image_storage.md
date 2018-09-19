@@ -2,7 +2,8 @@
 
 OpenShift requires storage to be set aside for container images. This storage will house the container images used in the class. It’s important to realize that images are stored here but not the application data itself.
 
-Each of your OpenShift cluster machines has been an additional 10G block device to host container images. Should you wish to verify the locally-attached storage of your machines, you can run lsblk on individual hosts or via ansible. The following example is optional, and was run from master:
+Each of your OpenShift cluster machines has been provisioned with an additional 10G block device to host container images. Should you wish to verify the locally-attached storage of your machines, you can run `lsblk` on individual hosts or via ansible. The following example was run from master:
+
 ```
 [root@master ~]# lsblk
 NAME                   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -16,7 +17,7 @@ vda                    252:0    0   10G  0 disk
 vdb                    252:16   0   10G  0 disk
 [root@master ~]#
 ```
-As shown by lsblk, /dev/vdb is 10G. We will use /dev/vdb as our container image block device. A good practice is to ensure there isn’t information left on block devices. wipefs can be used to remove any leftover file system, raid, or other metadata from block devices.
+As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container image block device. A good practice is to ensure there isn’t any previous information left on block devices. `wipefs` can be used to remove any leftover file system, raid, or other metadata from block devices.
 
 Run the following from your workstation host to prepare the block devices :
 ```
@@ -30,9 +31,10 @@ VG=docker-vg
 EOF
 "; done
 ```
-We will now run docker-storage-setup, which controls how container image data is stored (which we specified above), and we will ensure the docker daemon is running and enabled:
+We will now run `docker-storage-setup`, which controls how container image data is stored (which we specified above), and we will ensure the docker daemon is running and enabled:
 ```
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'docker-storage-setup'
 [student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable docker && service docker start'
 ```
 Please ensure there are no errors before continuing.
+[Lesson Five: Creating the OpenShift Ansible Inventory](05-lesson-create_inventory.md)

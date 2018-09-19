@@ -31,3 +31,4 @@ Continue to the overview where you can watch the build progress.
 
 Once the build completes, you can click on the first route you created earlier to see your map populated.
 
+[Extra Credit Lesson: Using the CLI to Create Applications](09-lesson-extra_credit.md)

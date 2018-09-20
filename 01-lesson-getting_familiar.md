@@ -6,7 +6,7 @@ Your workstation virtual machine has a unique, publicly-accessible IP address an
 
 Once you've logged into the portal using the student credentials provided by your instructor, proceed to the guestbook and register. This registration process will give you a student number and will provide the public IP address of the workstation. In a later lab, this page will also provide a graphical environment.
 
-You can download an ssh client for Windows at putty.org if need be. Once on the workstation, you may become root via “sudo -i”. 
+You can download an ssh client for Windows at https://putty.org if need be. Once on the workstation, you may become root via `sudo -i`. 
 
 ssh to the workstation and build an ansible hosts file suitable for managing your OpenShift environment:
 ```

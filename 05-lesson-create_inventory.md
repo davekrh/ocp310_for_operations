@@ -22,6 +22,10 @@ It is important to have a DNS wildcard domain implemented well in advance of Ope
 
 OpenShift’s installation documentation provides examples of the inventory file. You can also find examples under `/usr/share/doc/openshift-ansible-docs-$version/docs/example-inventories/`.
 
+**Important note:** Our OpenShift cluster will communicate via private, non-routable IP addresses within the training environment. In order to directly access OpenShift from your browser, it will be necessary to know the public IP address of the master machine. This IP address can be found on the page listing your student information, which your instructor has provided.
+
+To access the public IP address of the master host, go to the student page and click `Control Center` (Just below your Student number). This link gives you additional access to the training environment. Find the box for `MASTER` and take note of the IP address following `web: `. You will add this IP address to the inventory below.
+
 The inventory file resides on the master host. Log onto the master host:
 ```
 [student@workstation ~]$ sudo ssh master
@@ -33,7 +37,7 @@ You should have a default, completely commented `/etc/ansible/hosts` file on mas
 ```
 [root@master ~]# > /etc/ansible/hosts
 ```
-We will now build the inventory file used by OpenShift. Open a text editor and input the following in `/etc/ansible/hosts`:
+We will now build the inventory file used by OpenShift. You must replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and input the following in `/etc/ansible/hosts`:
 ```
 # 20180821 -- begin OpenShift inventory file
 # Create an OSEv3 group that contains the masters, nodes, and etcd groups
@@ -48,10 +52,10 @@ etcd
 ansible_ssh_user=root
 os_firewall_use_firewalld=True
 
-# 20180521
-openshift_master_default_subdomain=cloud.example.com
+# 20180925
+openshift_master_default_subdomain=YOUR_MASTER_PUBLIC_IP_ADDRESS.xip.io
 
-# 20180521, from msei-, we are *way* under-resourced
+# 20180521, from mseida, we are *way* under-resourced
 openshift_disable_check=memory_availability,disk_availability
 
 openshift_deployment_type=openshift-enterprise
@@ -62,7 +66,7 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 
 # host group for masters
 [masters]
-master.example.com
+master.example.com openshift_public_hostname=YOUR_MASTER_PUBLIC_IP_ADDRESS.xip.io openshift_hostname=master.example.com openshift_ip=10.0.0.11 openshift_public_ip=YOUR_MASTER_PUBLIC_IP_ADDRESS
 
 # host group for etcd
 [etcd]
@@ -78,8 +82,6 @@ node2.example.com openshift_node_group_name='node-config-compute'
 ```
 
 Please carefully examine `/etc/ansible/hosts` to ensure everything appears correct.
-
-TIP: In particular, depending on the tools and editor used to cut-and-paste, be sure that only the desired comment lines start with `#` and not the entire file! 
 
 At this point, we are ready to validate our setup and install OpenShift.
 

@@ -9,48 +9,13 @@ Last login: Thu Aug  2 10:39:23 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
 [root@master ~]#
 ```
-If this is the first time you've tried to log onto other hosts from master, you'll be prompted to accept fingerprints. We need to accept the fingerprints of our cluster otherwise the installation will prompt us. We can ensure all fingerprints are accepted by running ansible:
+If this is the first time you've tried to log onto other hosts from master, you'll be prompted to accept fingerprints. We can avoid being prompted to access fingerprints by running the following:
 ```
-[root@master ~]# ansible all -m ping
+[root@master ~]# export ANSIBLE_HOST_KEY_CHECKING=False
 ```
-If you have fingerprints that haven't been accepted yet, you'll see something like the following:
-```
-[root@master ~]# ansible all -m ping
-The authenticity of host 'master.example.com (10.0.0.11)' can't be established.
-ECDSA key fingerprint is SHA256:pqEzU0KcYUE6PnN10cZidWqyDGbjMzYkyrfQuqlKTKk.
-ECDSA key fingerprint is MD5:03:85:97:10:f3:78:37:b9:a4:a2:88:99:04:81:b8:23.
-Are you sure you want to continue connecting (yes/no)? The authenticity of host 'node2.example.com (10.0.0.13)' can't be established.
-ECDSA key fingerprint is SHA256:pqEzU0KcYUE6PnN10cZidWqyDGbjMzYkyrfQuqlKTKk.
-ECDSA key fingerprint is MD5:03:85:97:10:f3:78:37:b9:a4:a2:88:99:04:81:b8:23.
-Are you sure you want to continue connecting (yes/no)? The authenticity of host 'node1.example.com (10.0.0.12)' can't be established.
-ECDSA key fingerprint is SHA256:pqEzU0KcYUE6PnN10cZidWqyDGbjMzYkyrfQuqlKTKk.
-ECDSA key fingerprint is MD5:03:85:97:10:f3:78:37:b9:a4:a2:88:99:04:81:b8:23.
-Are you sure you want to continue connecting (yes/no)? yes
-master.example.com | SUCCESS => {
-    "changed": false, 
-    "failed": false, 
-    "ping": "pong"
-}
-yes
-node2.example.com | SUCCESS => {
-    "changed": false, 
-    "failed": false, 
-    "ping": "pong"
-}
-yes
-node1.example.com | SUCCESS => {
-    "changed": false, 
-    "failed": false, 
-    "ping": "pong"
-}
-[root@master ~]# 
-```
+
 Onward to installation. Become root on the master (if needed) and run the following:
 ```
-[student@workstation ~]$ sudo ssh master
-Last login: Thu Aug  2 10:39:23 2018 from workstation.example.com
-Red Hat Enterprise Linux 7
-
 [root@master ~]# id
 uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 

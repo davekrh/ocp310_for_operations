@@ -12,15 +12,15 @@ Our first step is to ensure we have the proper software repositories enabled. We
 ```
 Enable the needed repos for all OpenShift hosts:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a "yum-config-manager --enable \ 
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum-config-manager --enable \ 
     rhel-7-server-rpms \
     rhel-7-server-extras-rpms \
     rhel-7-server-ose-3.10-rpms \
-    rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms"
+    rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms'
 ```
 You can confirm the correct repositories have been enabled with the following:
 ```
-[student@workstation ~]$ sudo ansible -f3 all -m shell -a 'yum repolist'
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum repolist'
 ```
 You should see output similar to the following:
 ```

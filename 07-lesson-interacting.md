@@ -58,7 +58,7 @@ Adding password for user admin
 [root@master ~]# oc adm policy add-cluster-role-to-user cluster-admin admin
 cluster role "cluster-admin" added: "admin"
 ```
-You have now created a user named `admin` with the password of `ocpuser`. Log in again:
+You have now created a user named `admin` with the password of `ocpadmin`. Log in again:
 ```
 [root@master ~]# oc login https://master.example.com:8443
 Authentication required for https://master.example.com:8443 (openshift)
@@ -88,7 +88,6 @@ You can also try a few different commands once logged in:
 ```
 [root@master ~]# oc whoami
 admin
-You have new mail in /var/spool/mail/root
 
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443

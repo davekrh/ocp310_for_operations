@@ -23,7 +23,7 @@ As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container 
 
 Run the following from your workstation host to prepare the block devices :
 ```
-[student@workstation ~]$ sudo ansible all -m shell -a 'wipefs --all /dev/vdb'
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'wipefs --all /dev/vdb'
 ```
 After the storage is deemed suitable, run the following from your workstation:
 ```

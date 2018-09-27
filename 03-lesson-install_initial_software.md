@@ -16,7 +16,7 @@ The initial package installation shouldn’t take too long to complete. The flag
 
 OpenShift also requires that NetworkManager be enabled on the cluster. We can ensure this by running the following:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a "systemctl enable NetworkManager"
+[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable NetworkManager'
 ```
 At this point, you should have the initial packages needed to begin the OpenShift installation in place.
 

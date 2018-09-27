@@ -37,7 +37,7 @@ You should have a default, completely commented `/etc/ansible/hosts` file on mas
 ```
 [root@master ~]# > /etc/ansible/hosts
 ```
-We will now build the inventory file used by OpenShift. You must replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and input the following in `/etc/ansible/hosts`:
+We will now build the inventory file used by OpenShift. You must replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and edit the ansible hosts file:  `vim /etc/ansible/hosts`:
 ```
 # 20180821 -- begin OpenShift inventory file
 # Create an OSEv3 group that contains the masters, nodes, and etcd groups

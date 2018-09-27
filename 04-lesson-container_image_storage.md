@@ -23,7 +23,7 @@ As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container 
 
 Run the following from your workstation host to prepare the block devices :
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'wipefs --all /dev/vdb'
+[student@workstation ~]$ sudo ansible all -m shell -a 'wipefs --all /dev/vdb'
 ```
 After the storage is deemed suitable, run the following from your workstation:
 ```
@@ -35,8 +35,8 @@ EOF
 ```
 We will now run `docker-storage-setup`, which controls how container image data is stored (which we specified above), and we will ensure the docker daemon is running and enabled:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'docker-storage-setup'
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable docker && service docker start'
+[student@workstation ~]$ sudo ansible all -m shell -a 'docker-storage-setup'
+[student@workstation ~]$ sudo ansible all -m shell -a 'systemctl enable docker && service docker start'
 ```
 Please ensure there are no errors before continuing.
 

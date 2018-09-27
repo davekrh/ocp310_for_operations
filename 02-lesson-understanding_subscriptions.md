@@ -8,11 +8,11 @@ We have pre-arranged the subscriptions used in this class, so we will not be reg
 
 Our first step is to ensure we have the proper software repositories enabled. We start by disabling any existing repositories and adding only the repositories we need. On your workstation machine, execute the following:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum-config-manager  --disable \* '
+[student@workstation ~]$ sudo ansible all -m shell -a 'yum-config-manager  --disable \* '
 ```
 Enable the needed repos for all OpenShift hosts:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum-config-manager --enable \ 
+[student@workstation ~]$ sudo ansible all -m shell -a 'yum-config-manager --enable \ 
     rhel-7-server-rpms \
     rhel-7-server-extras-rpms \
     rhel-7-server-ose-3.10-rpms \
@@ -20,7 +20,7 @@ Enable the needed repos for all OpenShift hosts:
 ```
 You can confirm the correct repositories have been enabled with the following:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'yum repolist'
+[student@workstation ~]$ sudo ansible all -m shell -a 'yum repolist'
 ```
 You should see output similar to the following:
 ```

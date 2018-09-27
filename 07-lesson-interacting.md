@@ -108,12 +108,14 @@ openshift-sdn                                      Active
 openshift-template-service-broker                  Active
 openshift-web-console                              Active
 ```
-Next we will create a user with limited authority. Perform the following on master:
+Next we will create two user accounts with limited authority. Perform the following on master:
 ```
 [root@master ~]# htpasswd -b /etc/origin/master/htpasswd user ocpuser
 Adding password for user user
+[root@master ~]# htpasswd -b /etc/origin/master/htpasswd student n0boundaries!
+Adding password for user student
 ```
-You now will have a user named `user` with the password of `ocpuser`. You can log in via the CLI by doing the following:
+You now will have a user named `user` with the password of `ocpuser`, as well as a user named `student` with the password of `n0boundaries!`. You can log in via the CLI by doing the following:
 ```
 [root@master ~]# oc whoami
 admin

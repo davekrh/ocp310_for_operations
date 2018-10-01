@@ -35,8 +35,8 @@ EOF
 ```
 We will now run `docker-storage-setup`, which controls how container image data is stored (which we specified above), and we will ensure the docker daemon is running and enabled:
 ```
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'docker-storage-setup'
-[student@workstation ~]$ sudo ansible -f 3 all -m shell -a 'systemctl enable docker && service docker start'
+[student@workstation ~]$ sudo ansible all -m shell -a 'docker-storage-setup'
+[student@workstation ~]$ sudo ansible all -m shell -a 'systemctl enable docker && service docker start'
 ```
 Please ensure there are no errors before continuing.
 

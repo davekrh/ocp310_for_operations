@@ -58,7 +58,7 @@ Adding password for user admin
 [root@master ~]# oc adm policy add-cluster-role-to-user cluster-admin admin
 cluster role "cluster-admin" added: "admin"
 ```
-You have now created a user named `admin` with the password of `ocpuser`. Log in again:
+You have now created a user named `admin` with the password of `ocpadmin`. Log in again:
 ```
 [root@master ~]# oc login https://master.example.com:8443
 Authentication required for https://master.example.com:8443 (openshift)
@@ -88,7 +88,6 @@ You can also try a few different commands once logged in:
 ```
 [root@master ~]# oc whoami
 admin
-You have new mail in /var/spool/mail/root
 
 [root@master ~]# oc whoami --show-server
 https://master.example.com:8443
@@ -109,12 +108,14 @@ openshift-sdn                                      Active
 openshift-template-service-broker                  Active
 openshift-web-console                              Active
 ```
-Next we will create a user with limited authority. Perform the following on master:
+Next we will create two user accounts with limited authority. Perform the following on master:
 ```
 [root@master ~]# htpasswd -b /etc/origin/master/htpasswd user ocpuser
 Adding password for user user
+[root@master ~]# htpasswd -b /etc/origin/master/htpasswd student n0boundaries!
+Adding password for user student
 ```
-You now will have a user named `user` with the password of `ocpuser`. You can log in via the CLI by doing the following:
+You now will have a user named `user` with the password of `ocpuser`, as well as a user named `student` with the password of `n0boundaries!`. You can log in via the CLI by doing the following:
 ```
 [root@master ~]# oc whoami
 admin

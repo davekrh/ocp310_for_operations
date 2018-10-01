@@ -112,7 +112,7 @@ Next we will create two user accounts with limited authority. Perform the follow
 ```
 [root@master ~]# htpasswd -b /etc/origin/master/htpasswd user ocpuser
 Adding password for user user
-[root@master ~]# htpasswd -b /etc/origin/master/htpasswd student n0boundaries!
+[root@master ~]# htpasswd -b /etc/origin/master/htpasswd student <provided password>
 Adding password for user student
 ```
 You now will have a user named `user` with the password of `ocpuser`, as well as a user named `student` with the password of `n0boundaries!`. You can log in via the CLI by doing the following:

@@ -19,7 +19,7 @@ Once you've logged into the portal using the student credentials provided by you
 2. If ssh client package is not installed then
     - For Linux: Run `yum -y install openssh-clients`
 
-### Lab Instructions:
+## Lab Instructions:
 
 1. Open a command line window or a terminal on your laptop.
 

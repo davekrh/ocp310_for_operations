@@ -47,7 +47,6 @@ Ansible requires that hosts be reachable without intervention. For this training
 ```
 If everything is configured properly, you should see something like the following:
 ```
-
 node1 | SUCCESS => {
     "changed": false,
     "ping": "pong"
@@ -64,6 +63,9 @@ master | SUCCESS => {
 5. You may also execute arbitrary shell commands via ansible:
 ```
 [student@workstation ~]$ sudo ansible all -m shell -a 'uptime'
+```
+The output should be similar to the sample output below.
+```
 node2 | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.07, 0.08, 0.08
 

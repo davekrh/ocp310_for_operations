@@ -4,7 +4,11 @@ OpenShift uses a centralized Ansible inventory file to describe, install, and mo
 
 OpenShift requires access to DNS. Crucially, OpenShift requires the ability to utilize DNS wildcards. This is required for arbitrary applications to be created and reachable via DNS names. 
 
-Our environment has pre-configured a wildcard DNS domain. On any machine, you can ping arbitrary DNS names on `cloud.example.com` to refer back to OpenShift’s master:
+Our environment has pre-configured a wildcard DNS domain. 
+
+## Lab Instructions
+
+1. On any machine, ping arbitrary DNS names on `cloud.example.com` to refer back to OpenShift’s master:
 ```
 [student@workstation ~]$ ping jobu.cloud.example.com
 PING jobu.cloud.example.com (10.0.0.11) 56(84) bytes of data.
@@ -24,20 +28,23 @@ OpenShift’s installation documentation provides examples of the inventory file
 
 **Important note:** Our OpenShift cluster will communicate via private, non-routable IP addresses within the training environment. In order to directly access OpenShift from your browser, it will be necessary to know the public IP address of the master machine. This IP address can be found on the page listing your student information, which your instructor has provided.
 
-To access the public IP address of the master host, go to the student page and click `Control Center` (Just below your Student number). This link gives you additional access to the training environment. Find the box for `MASTER` and take note of the IP address following `web: `. You will add this IP address to the inventory below.
+2. To access the public IP address of the master host, go to the student page and click `Control Center` (Just below your Student number). This link gives you additional access to the training environment. Find the box for `MASTER` and take note of the IP address following `web: `. You will add this IP address to the inventory below.
 
-The inventory file resides on the master host. Log onto the master host:
+3. The inventory file resides on the master host. Log onto the master host:
 ```
 [student@workstation ~]$ sudo ssh master
 Last login: Thu Aug  2 10:39:17 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
 [root@master ~]#
 ```
-You should have a default, completely commented `/etc/ansible/hosts` file on master. Blanking this file is a good practice before creating your OpenShift inventory. Run the folling on master to blank the default inventory file:
+
+4. There should be a default, completely commented `/etc/ansible/hosts` file on master. Blanking this file is a good practice before creating your OpenShift inventory. Run the folling on master to blank the default inventory file:
 ```
 [root@master ~]# > /etc/ansible/hosts
 ```
-We will now build the inventory file used by OpenShift. You must replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and edit the ansible hosts file:  `vim /etc/ansible/hosts`:
+
+5. Now build the inventory file used by OpenShift. Replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and edit the ansible hosts file:  `vim /etc/ansible/hosts`:
+
 ```
 # 20180821 -- begin OpenShift inventory file
 # Create an OSEv3 group that contains the masters, nodes, and etcd groups
@@ -83,6 +90,6 @@ node2.example.com openshift_node_group_name='node-config-compute'
 
 Please carefully examine `/etc/ansible/hosts` to ensure everything appears correct.
 
-At this point, we are ready to validate our setup and install OpenShift.
+At this point, you are ready to validate our setup and install OpenShift.
 
 [Lesson Six: Installing the OpenShift Cluster](06-lesson-install_cluster.md)

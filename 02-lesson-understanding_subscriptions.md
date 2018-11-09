@@ -6,11 +6,15 @@ Because Red Hat software is made available via subscriptions, a common productio
 
 We have pre-arranged the subscriptions used in this class, so we will not be registering our machines. We are using yum-config-manager today however production environments would leverage subscription-manager to locally administer subscriptions and software repositories. yum-config-manager will approximate the process of adding the correct subscriptions to an OpenShift deployment.
 
-Our first step is to ensure we have the proper software repositories enabled. We start by disabling any existing repositories and adding only the repositories we need. On your workstation machine, execute the following:
+## Lab Instructions
+Our first step is to ensure we have the proper software repositories enabled. We start by disabling any existing repositories and adding only the repositories we need. 
+
+1. On your workstation machine, execute the following:
 ```
 [student@workstation ~]$ sudo ansible all -m shell -a 'yum-config-manager  --disable \* '
 ```
-Enable the needed repos for all OpenShift hosts:
+
+2. Enable the needed repos for all OpenShift hosts:
 ```
 [student@workstation ~]$ sudo ansible all -m shell -a 'yum-config-manager --enable \ 
     rhel-7-server-rpms \
@@ -18,10 +22,12 @@ Enable the needed repos for all OpenShift hosts:
     rhel-7-server-ose-3.10-rpms \
     rhel-7-fast-datapath-rpms rhel-7-server-ansible-2.4-rpms'
 ```
-You can confirm the correct repositories have been enabled with the following:
+
+3. Confirm the correct repositories have been enabled with the following:
 ```
 [student@workstation ~]$ sudo ansible all -m shell -a 'yum repolist'
 ```
+
 You should see output similar to the following:
 ```
 ...
@@ -38,6 +44,7 @@ rhel-7-server-rpms                      RHEL7                             5,285
 repolist: 5,953
 ...
 ```
+
 In a production environment, it is important to understand how to manage subscriptions, both to receive support and to ensure software remains current and secure.
 
 [Lesson Three: Install the Initial Software Packages](03-lesson-install_initial_software.md)

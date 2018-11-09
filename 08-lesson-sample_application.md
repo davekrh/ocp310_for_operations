@@ -20,20 +20,20 @@ Log in with the `user` account you created earlier and perform the following ste
 
 5. In order to interact with your application outside of the OpenShift cluster itself, you need to create a route. In the overview, ensure the arrow to the left of *parksmap-katacoda* is expanded. 
 
-Click *Create Route* and accept the defaults by clicking *Create* at the bottom of the page. You’ll see a URL that you can click within the overview.
+6. Click *Create Route* and accept the defaults by clicking *Create* at the bottom of the page. You’ll see a URL that you can click within the overview.
 
-6. Click the route URL, you should see a map in a browser window.
+7. Click the route URL, you should see a map in a browser window.
 
-7. We will now create a container from existing source code, also called “S2I” or “source to image”. This container will be the backend for our map.
+8. We will now create a container from existing source code, also called “S2I” or “source to image”. This container will be the backend for our map.
 
-8. Switch back to the Console tab and click *Add to Project* in the upper right corner, then *Browse Catalog*. Find and select *Python*. Ensure the *Application Name* is: `nationalparks-katacoda` and the *Git Repository* is:
+9. Switch back to the Console tab and click *Add to Project* in the upper right corner, then *Browse Catalog*. Find and select *Python*. Ensure the *Application Name* is: `nationalparks-katacoda` and the *Git Repository* is:
 ```
 https://github.com/openshift-roadshow/nationalparks-katacoda
 ```
 
-9. Click the blue *Create* button in bottom corner.
+10. Click the blue *Create* button in bottom corner.
 
-10. Then click on *Continue to the Project Overview* where you can watch the build progress.
+11. Then click on *Continue to the Project Overview* where you can watch the build progress.
 
 Once the build completes, you can click on the first route you created earlier to see your map populated.
 

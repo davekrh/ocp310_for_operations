@@ -70,7 +70,7 @@ Adding password for user admin
 ```
 A user named `admin` with the password of `ocpadmin` is now created.
 
-6. Give cluster-admin role to user `admin`.
+6. Give `cluster-admin` role to user `admin`.
 ```
 [root@master ~]# oc adm policy add-cluster-role-to-user cluster-admin admin
 cluster role "cluster-admin" added: "admin"

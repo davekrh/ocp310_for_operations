@@ -6,7 +6,15 @@ OpenShift requires storage to be set aside for container images. This storage wi
 
 Each of your OpenShift cluster machines has been provisioned with an additional 10G block device to host container images. 
 
-1. Verify the locally-attached storage of your machines. Run `lsblk` on individual hosts or via ansible. The following example was run from master:
+1. Ssh into master to verify the storage configured on it.
+```
+sudo ssh master
+Last login: Wed Dec  5 11:18:45 2018 from workstation.example.com
+Red Hat Enterprise Linux 7
+[root@master ~]#
+```
+
+2. Verify the locally-attached storage of your machines. Run `lsblk` on individual hosts or via ansible. The following example was run from master:
 
 ```
 [root@master ~]# lsblk
@@ -23,6 +31,11 @@ vdb                    252:16   0   10G  0 disk
 ```
 
 As shown by `lsblk`, `/dev/vdb` is 10G. We will use `/dev/vdb` as our container image block device. A good practice is to ensure there isn’t any previous information left on block devices. `wipefs` can be used to remove any leftover file system, raid, or other metadata from block devices.
+
+3. Log out of master to return to the workstation.
+```
+[root@master ~]# exit
+```
 
 2. Run the following from your workstation host to prepare the block devices :
 ```

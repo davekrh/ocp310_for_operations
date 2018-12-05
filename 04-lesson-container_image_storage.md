@@ -6,9 +6,9 @@ OpenShift requires storage to be set aside for container images. This storage wi
 
 Each of your OpenShift cluster machines has been provisioned with an additional 10G block device to host container images. 
 
-1. Ssh into master to verify the storage configured on it.
+1. From the workstation, ssh into master to verify the storage configured on it.
 ```
-sudo ssh master
+[student@workstation ~]$ sudo ssh master
 Last login: Wed Dec  5 11:18:45 2018 from workstation.example.com
 Red Hat Enterprise Linux 7
 [root@master ~]#

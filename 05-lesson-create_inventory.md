@@ -43,7 +43,10 @@ Red Hat Enterprise Linux 7
 [root@master ~]# > /etc/ansible/hosts
 ```
 
-5. Now build the inventory file used by OpenShift. Replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and edit the ansible hosts file:  `vim /etc/ansible/hosts`:
+5. Now build the inventory file used by OpenShift. Replace the instances of **YOUR_MASTER_PUBLIC_IP_ADDRESS** with the public IP address of your master host, explained above. Open a text editor and edit the ansible hosts file:  
+```
+[root@master ~]# vim /etc/ansible/hosts
+```
 
 ```
 # 20180821 -- begin OpenShift inventory file

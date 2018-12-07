@@ -47,6 +47,9 @@ Red Hat Enterprise Linux 7
 ```
 [root@master ~]# vim /etc/ansible/hosts
 ```
+Copy and paste the following content into `/etc/ansiible/hosts` file. Ensure you have replaced the **YOUR_MASTER_PUBLIC_IP_ADDRESS** with your cluster's master node's public IP address. 
+
+:information_source: **_Note that you have to replace it in 3 places._**
 
 ```
 # 20180821 -- begin OpenShift inventory file

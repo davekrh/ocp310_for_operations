@@ -13,6 +13,7 @@ Our lab has already populated the hosts with passwordless ssh keys. These keys c
 Mark Seida
 Christoph Doerbeck
 Gareth Jenkins
+Banu Bhandaru
 Gordon Keegan
 Justin Pittman
 Matthew Ward

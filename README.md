@@ -15,7 +15,7 @@ Your instructor will grant you a hosted environment with virtual hardware. The e
 
 | Machine Name | Description |
 | --- | --- |
-| Workstation(workstation.example.com) | This machine has a dynamically assigned public IP address that you will SSH to, as well as a virtual desktop environment with a web browser. |
+| Workstation | This machine has a dynamically assigned public IP address that you will SSH to, as well as a virtual desktop environment with a web browser. |
 | Master (master.example.com) | This machine will host the OpenShift master. |
 | Node1 (node1.example.com) | This machine will host one OpenShift node. |
 | Node2 (node2.example.com) | This machine will host one OpenShift node. |

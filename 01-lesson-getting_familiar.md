@@ -6,9 +6,29 @@ Your workstation virtual machine has a unique, publicly-accessible IP address an
 
 Once you've logged into the portal using the student credentials provided by your instructor, proceed to the guestbook and register. This registration process will give you a student number and will provide the public IP address of the workstation. In a later lab, this page will also provide a graphical environment.
 
-You can download an ssh client for Windows at https://putty.org if need be. Once on the workstation, you may become root via `sudo -i`. 
+## User laptop software requirements
 
-ssh to the workstation and build an ansible hosts file suitable for managing your OpenShift environment:
+#### Microsoft Windows
+1. SSH Client: Putty for Windows
+   Download ssh client for Windows at https://putty.org if need be.
+
+2. If ssh is blocked on the network, then use https://shellngn.com to do ssh over http. You will need to setup an account if you do not have one already.
+
+#### Linux
+1. Use ssh from a terminal window.
+2. If ssh client package is not installed then
+    - For Linux: Run `yum -y install openssh-clients`
+
+## Lab Instructions:
+
+1. Open a command line window or a terminal on your laptop.
+
+2. ssh to the workstation host in the OpenShift cluster. Get the IP Address to your workstation in the OpenShift Cluster from the URL on the whiteboard. Use your assigned student# to find the IP address.
+```
+ssh student@<workstation IP>
+```
+
+3. Build an ansible hosts file suitable for managing your OpenShift environment:
 ```
 [student@workstation ~]$ sudo vim /etc/ansible/hosts
 [ocp]
@@ -21,13 +41,12 @@ This file allows you to manage your OpenShift environment with ansible. Ansible 
 
 Ansible requires that hosts be reachable without intervention. For this training, we've created keys that allow password-less logins via root. See the appendix for additional information about creating and distributing ssh keys.
 
-Try the following commands to ensure your OpenShift virtual machines are reachable via ansible:
+4. Try the following commands to ensure your OpenShift virtual machines are reachable via ansible:
 ```
 [student@workstation ~]$ sudo ansible all -m ping
 ```
 If everything is configured properly, you should see something like the following:
 ```
-
 node1 | SUCCESS => {
     "changed": false,
     "ping": "pong"
@@ -41,9 +60,12 @@ master | SUCCESS => {
     "ping": "pong"
 }
 ```
-You may also execute arbitrary shell commands via ansible:
+5. You may also execute arbitrary shell commands via ansible:
 ```
 [student@workstation ~]$ sudo ansible all -m shell -a 'uptime'
+```
+The output should be similar to the sample output below.
+```
 node2 | SUCCESS | rc=0 >>
  15:29:00 up 38 min,  1 user,  load average: 0.07, 0.08, 0.08
 

@@ -2,7 +2,11 @@
 
 With DNS verified, prerequisite packages installed, and the inventory file in place, we are ready to perform the OpenShift installation. The installation is contained within two steps. The first step completes prerequisites prior to installation, and the second step performs the actual installation. The first step could take as little as five minutes, while the install can take thirty or more minutes.
 
-These steps will be performed on the master virtual machine. Log in now:
+## Lab Instructions
+
+These steps will be performed on the master virtual machine. 
+
+1. Log in now to master:
 ```
 [student@workstation ~]$ sudo ssh master
 Last login: Thu Aug  2 10:39:23 2018 from workstation.example.com
@@ -14,21 +18,28 @@ If this is the first time you've tried to log onto other hosts from master, you'
 [root@master ~]# export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
-Onward to installation. Become root on the master (if needed) and run the following:
+2. Onward to installation. Become root on the master (if needed) and run the following:
 ```
 [root@master ~]# id
 uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 [root@master ~]# hostname
 master.example.com
+```
 
+3. Run the following command to execute the ansible playbook to install the prerequisites.
+```
 [root@master ~]# time ansible-playbook \
     /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml
+```
 
+4. Run the following command to execute the ansible playbook to install OpenShift cluster.
+```
 [root@master ~]# time ansible-playbook \
     /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
 ```
-You should see the following after about thirty minutes:
+
+This takes about thirty minutes to complete. At the end of it, the output should be as below:
 ```
 ...
 
@@ -57,6 +68,6 @@ sys    3m50.009s
 You have new mail in /var/spool/mail/root
 [root@master ~]#
 ```
-Errors occurring during the installation will appear in bright red. Provided the installation completed successfully, we may now proceed to test and interact with the environment.
+Errors occurring during the installation will appear in bright red. Provided the installation completed successfully, now proceed to test and interact with the environment.
 
 [Lesson Seven: Interacting With Your Installation](07-lesson-interacting.md)
